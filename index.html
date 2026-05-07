@@ -93,6 +93,7 @@ const GROUPS = [{"label": "Parallel Pdf Read", "images": [{"file": "demo-01-para
 
 let curGroup = 0, curImg = 0, scale = 1, tx = 0, ty = 0;
 let dragging = false, dragX = 0, dragY = 0;
+let autoSpeed = 3000, autoLoop = true, autoTimer = null, progTimer = null, progStart = 0;
 
 const sidebar    = document.getElementById('sidebar');
 const viewer     = document.getElementById('viewer-wrap');
@@ -184,8 +185,6 @@ const ddToggle = document.getElementById('dd-toggle');
 const ddMenu   = document.getElementById('auto-dropdown');
 const loopItem = document.getElementById('loop-item');
 const progBar  = document.getElementById('progress-bar');
-
-let autoSpeed = 3000, autoLoop = true, autoTimer = null, progTimer = null, progStart = 0;
 
 function startAutoplay() {
   clearInterval(autoTimer); clearInterval(progTimer);
